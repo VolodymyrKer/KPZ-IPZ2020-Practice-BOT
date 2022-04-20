@@ -46,8 +46,8 @@ def smile(update, context):
         response_smile = requests.get("https://ranmoji.herokuapp.com/emojis/api/v.1.0/")
         data_smile = response_smile.json()
         emoji = html.unescape(data_smile.get('emoji').split(';')[0] + ';')
-        text += emoji
         text += word
+        text += emoji
     update.message.reply_text(text)
 
 
